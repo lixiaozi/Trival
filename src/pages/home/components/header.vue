@@ -2,7 +2,7 @@
 <div class="header">
   <div class="header-left"><div class="iconfont back-btn">&#xe610;</div></div>
   <div class="header-input"><span class="iconfont">&#xe69d;</span>输入城市/景点/游玩主题</div>
-  <div class="header-right">城市<span class="iconfont">&#xe612;</span></div>
+  <router-link to="/city"><div class="header-right">城市<span class="iconfont">&#xe612;</span></div></router-link>
 </div>
 </template>
 
@@ -16,10 +16,10 @@ export default {
 //    1rem = html font-size = 50px
     @import '~styles/varibles.styl'
     .header
-        height:55px
+        height:$headerHeight
         display :flex
         background : $bgColor
-        line-height :55px
+        line-height :$headerHeight
         color :#fff
         .header-left
             width:54px
@@ -40,4 +40,5 @@ export default {
             width : 84px
             float : right
             text-align :center
+            color : #fff
 </style>
