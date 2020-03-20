@@ -30,3 +30,4 @@ export default {
   left:3px
   color :white
 </style>
+
