@@ -5,7 +5,7 @@
     </div>
     <div class="search-content" ref="search" v-show="keyword">
       <ul>
-        <li class="search-item " v-for="item of list" :key="item.id">{{item.name}}</li>
+        <li class="search-item " v-for="item of list" :key="item.id"  @click="handleCityClick(item.name)" >{{item.name}}</li>
         <li class="search-item " v-show="hasList">no find</li>
       </ul>
     </div>
@@ -24,6 +24,13 @@ export default {
       list: [],
       timer: null
     }
+  },
+    methods: {
+      handleCityClick (city) {
+        //  this.$store.dispatch('changeCity',city)
+           this.$store.commit('changeCity',city)
+           this.$router.push('/')
+      }
   },
   computed: {
     hasList(){
@@ -73,9 +80,6 @@ export default {
       text-align :center
       border-radius :5px
       color :#666
-<<<<<<< HEAD
-</style>
-=======
   .search-content
     overflow : hidden
     position : absolute
@@ -91,5 +95,5 @@ export default {
      color :#666
      background :#fff 
      border-bottom :1px solid #666 
+     touch-action: none;
 </style>
->>>>>>> city-search-logic
